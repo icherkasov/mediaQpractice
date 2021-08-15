@@ -1,0 +1,112 @@
+.first {
+    display  : flex;
+    flex-wrap: wrap;
+}
+
+.first .colored {
+    flex-basis: 50%;
+}
+
+.second {
+    display  : flex;
+    flex-wrap: wrap;
+}
+
+.second .colored {
+    flex-basis: 50%;
+}
+
+.third,
+.fourth,
+.fifth {
+    display: block;
+}
+
+
+@media (min-width: 768px) {
+
+    .fourth,
+    .fifth {
+        display  : flex;
+        flex-wrap: wrap;
+    }
+
+    .fourth .colored,
+    .fifth .colored {
+        flex: 0 0 50%;
+    }
+
+    .fourth .colored:last-child,
+    .fifth .colored:last-child {
+        flex: 1 0 0;
+    }
+}
+
+@media (min-width: 960px) {
+
+    .second,
+    .third {
+        display: flex;
+    }
+
+    .second .colored,
+    .third .colored {
+        flex: 1 1 0;
+    }
+
+    .fourth {
+        display  : flex;
+        flex-wrap: nowrap;
+    }
+
+    .fourth .colored.colored {
+        flex-basis: 35%;
+    }
+
+    .fourth .colored:nth-child(2) {
+        flex-shrink: 1;
+    }
+
+}
+
+@media(min-width:1200px) {
+    .third {
+        flex-wrap: wrap;
+        flex     : 1 0 0;
+    }
+
+    .third .colored:last-child {
+        flex-basis: 100%;
+    }
+
+    .fifth {
+        flex-wrap      : wrap;
+        justify-content: center;
+    }
+
+    .fifth .colored.colored {
+        flex: 0 0 33%;
+    }
+
+}
+
+@media(min-width:1800px) {
+
+    .first .colored.colored,
+    .fifth .colored.colored {
+        flex: 1 1 0;
+    }
+
+    .third .colored.colored {
+        flex: 0 0 25%;
+    }
+
+
+    .fourth .colored.colored {
+        flex: 0 0 25%;
+    }
+
+    .fourth .colored.colored:last-child {
+        flex-grow: 1;
+    }
+}
